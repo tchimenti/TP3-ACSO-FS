@@ -3,12 +3,12 @@
 
 /********************************
  *				*
- *	 Clase TDriverFAT	*
+ *	 Clase TDriverEXT	*
  *				*
  ********************************/
 /****************************************************************************************************************************************
  *																	*
- *							TDriverFAT :: TDriverFAT							*
+ *							TDriverEXT :: TDriverEXT							*
  *																	*
  * OBJETIVO: Inicializar la clase recién creada.											*
  *																	*
@@ -18,14 +18,14 @@
  * SALIDA: Nada.															*
  *																	*
  ****************************************************************************************************************************************/
-TDriverFAT::TDriverFAT(const unsigned char *DiskData, unsigned LongitudDiskData) : TDriverBase(DiskData, LongitudDiskData)
+TDriverEXT::TDriverEXT(const unsigned char *DiskData, unsigned LongitudDiskData) : TDriverBase(DiskData, LongitudDiskData)
 {
 }
 
 
 /****************************************************************************************************************************************
  *																	*
- *							TDriverFAT :: ~TDriverFAT							*
+ *							TDriverEXT :: ~TDriverEXT							*
  *																	*
  * OBJETIVO: Liberar recursos alocados.													*
  *																	*
@@ -34,14 +34,13 @@ TDriverFAT::TDriverFAT(const unsigned char *DiskData, unsigned LongitudDiskData)
  * SALIDA: Nada.															*
  *																	*
  ****************************************************************************************************************************************/
-TDriverFAT::~TDriverFAT()
+TDriverEXT::~TDriverEXT()
 {
 }
 
-
 /****************************************************************************************************************************************
  *																	*
- *						   TDriverFAT :: LevantarDatosSuperbloque						*
+ *						   TDriverEXT :: LevantarDatosSuperbloque						*
  *																	*
  * OBJETIVO: Esta función analiza el superbloque y completa la estructura DatosFS con los datos levantados.				*
  *																	*
@@ -49,20 +48,18 @@ TDriverFAT::~TDriverFAT()
  *																	*
  * SALIDA: En el nombre de la función CODERROR_NINGUNO si no hubo errores. Sino uno de los siguientes valores:				*
  *		CODERROR_SUPERBLOQUE_INVALIDO   : El superbloque está dañado o no corresponde a un disco con ningún formato.		*
- *		CODERROR_FILESYSTEM_DESCONOCIDO : El superbloque es válido, pero no corresponde a un FyleSystem soportado por esta	*
+ *		CODERROR_FILESYSTEM_DESCONOCIDO : El superbloque es válido, pero no corresponde a un FyleSystem soportado por esta	*
  *						  clase.										*
- *																	*
- ****************************************************************************************************************************************/
-int TDriverFAT::LevantarDatosSuperbloque()
+ * ****************************************************************************************************************************************/
+int TDriverEXT::LevantarDatosSuperbloque()
 {
 /* Salir */
 return(CODERROR_NO_IMPLEMENTADO);
 }
 
-
 /****************************************************************************************************************************************
  *																	*
- *						  TDriverFAT :: ListarDirectorio							*
+ *						  TDriverEXT :: ListarDirectorio							*
  *																	*
  * OBJETIVO: Esta función enumera las entradas en un directorio y retorna un arreglo de elementos, uno por cada entrada.		*
  *																	*
@@ -72,16 +69,16 @@ return(CODERROR_NO_IMPLEMENTADO);
  *	   Entradas: Arreglo con cada una de las entradas.										*
  *																	*
  ****************************************************************************************************************************************/
-int TDriverFAT::ListarDirectorio(const char *Path, std::vector<TEntradaDirectorio> &Entradas)
+
+int TDriverEXT::ListarDirectorio(const char *Path, std::vector<TEntradaDirectorio> &Entradas)
 {
 /* Salir */
 return(CODERROR_NO_IMPLEMENTADO);
 }
 
-
 /****************************************************************************************************************************************
  *																	*
- *						     TDriverFAT :: LeerArchivo								*
+ *						     TDriverEXT :: LeerArchivo								*
  *																	*
  * OBJETIVO: Esta función levanta de la imágen un archivo dada su ruta.									*
  *																	*
@@ -90,13 +87,12 @@ return(CODERROR_NO_IMPLEMENTADO);
  * SALIDA: En el nombre de la función CODERROR_NINGUNO si no hubo errores, caso contrario el código de error.				*
  *	   Data: Buffer alocado con malloc() con los datos del archivo.									*
  *	   DataLen: Tamaño en bytes del buffer devuelto.										*
- *																	*
- * OBSERVACIONES: Los valores Data y DataLen sólo devuelven valores válidos si se retorna CODERROR_NINGUNO.				*
- *																	*
+ *																	*						*
  ****************************************************************************************************************************************/
-int TDriverFAT::LeerArchivo(const char *Path, unsigned char *&Data, unsigned &DataLen)
+int TDriverEXT::LeerArchivo(const char *Path, unsigned char *&Data, unsigned &DataLen)
 {
 /* Salir */
 return(CODERROR_NO_IMPLEMENTADO);
 }
+
 
