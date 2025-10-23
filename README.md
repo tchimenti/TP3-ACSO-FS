@@ -71,3 +71,10 @@ Describe un archivo o subdirectorio:
 - `PunteroASector(__u64 NroSector)` permite acceder a un sector físico dentro de la imagen del disco.  
 - Se proporciona código auxiliar para **mostrar superbloque, directorio y buffers**, pero la implementación de las funciones principales queda a cargo del alumno.  
 - Todos los cálculos de clusters, offsets y tamaños deben considerar los bytes por sector y sectores por cluster.
+
+## Como correr los tests
+
+- Se provee un zip con imagenes de disco de los distintos filesystems.
+- Descompriman la carpeta bins.zip
+- Tiene un archivo ejecutable de referencia tpfs_ref. Se corre con ./tpfs_ref <imagen de disco>
+- Su implementacion tiene que devolver lo mismo que el programa de refencia.
