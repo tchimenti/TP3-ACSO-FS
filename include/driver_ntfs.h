@@ -313,25 +313,6 @@ protected:
 	virtual int			LevantarDatosSuperbloque();
 	virtual int 			ListarDirectorio(const char *Path, std::vector<TEntradaDirectorio> &Entradas);
 	virtual int 			LeerArchivo(const char *Path, unsigned char *&Data, unsigned &DataLen);
-	
-	/* Funciones de implementación */
-	virtual int 			ListarDirectorio(FILE_REFERENCE &FileReference, const char *SubDirs, std::vector<TEntradaDirectorio> &Entradas);
-	virtual int			ColectarDatosIndiceDir(INDEX_RECORD *IndexRecord, void *Entradas);
-	
-	/* Funciones de parseo de índices */
-	virtual int 			ParsearIndice(FILE_REFERENCE &FileReference, const char *NombreIndice, TpColectoraDatosIndice pColectoraDatosIndice, void *pParametroUsuario);
-	virtual int			ParsearSubArbolIndice(void *pAllocIndexAllocation, VCN VirtualClusterAProcesar, TpColectoraDatosIndice pColectoraDatosIndice, void *pParametroUsuario);
-
-	/* Funciones de búsqueda de estructuras dentro de un segmento */
-	virtual int 			BuscarAtributo(FILE_REFERENCE &FileReference, ATTRIBUTE_TYPE_CODE Tipo, const char *Nombre, TDatosAlocados &DatosAlocados);
-	virtual int 			BuscarAtributo(FILE_RECORD_SEGMENT_HEADER *pSegmentHeader, ATTRIBUTE_TYPE_CODE Tipo, const char *Nombre, TDatosAlocados &DatosAlocados);
-
-	/* Funciones de bajo nivel */
-	virtual const unsigned char 	*PunteroACluster(LCN NroCluster);
-	virtual int 			PunteroABloqueCorregido(MULTI_SECTOR_HEADER *pMultiSegmentHeader, UPDATE_SEQUENCE_ARRAY *pUpdateSequenceArray, const char *Firma, void *&pAllocBloqueCorregido);
-	virtual void			ParsearDataRuns(DATA_RUN *DataRun, std::vector<TDataRun> &DataRuns);
-	virtual int			DataRunsAMemoria(__u64 NumBytes, std::vector<TDataRun> &DataRuns, void *&pAllocAttribute);
-	virtual void 			GetUTF8String(WCHAR *pChars, unsigned Largo, TString &Str);
 };
 
 #endif

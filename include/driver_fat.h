@@ -57,12 +57,6 @@ protected:
 	virtual int			LevantarDatosSuperbloque();
 	virtual int 			ListarDirectorio(const char *Path, std::vector<TEntradaDirectorio> &Entradas);
 	virtual int 			LeerArchivo(const char *Path, unsigned char *&Data, unsigned &DataLen);
-	
-	/* Funciones de implementación */
-	virtual const unsigned char	*PunteroACluster(unsigned NroCluster);
-	virtual int 			ListarDirectorio(std::vector<unsigned> &ClustersDirActual, const char *SubDirs, std::vector<TEntradaDirectorio> &Entradas);
-	virtual int 			ListarDirectorio(std::vector<unsigned> &Clusters, std::vector<TEntradaDirectorio> &Entradas);
-	virtual int			BuscarCadenaDeClusters(unsigned PrimerCluster, __u64 Longitud, std::vector<unsigned> &Clusters);
 };
 
 #endif

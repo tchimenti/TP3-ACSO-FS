@@ -253,18 +253,6 @@ protected:
 	virtual int 			ListarDirectorio(const char *Path, std::vector<TEntradaDirectorio> &Entradas);
 	virtual int 			LeerArchivo(const char *Path, unsigned char *&Data, unsigned &DataLen);
 	
-	/* Funciones de implementación */
-	virtual int 			ListarDirectorio(std::vector<__u64> &BloquesDirActual, const char *SubDirs, std::vector<TEntradaDirectorio> &Entradas);
-	virtual int 			ListarDirectorio(std::vector<__u64> &Bloques, std::vector<TEntradaDirectorio> &Entradas);
-	virtual int			BuscarBloques(unsigned NroINode, std::vector<__u64> &Bloques);
-
-	/* Funciones de bajo nivel */
-	virtual int 			ParsearExtents(TExtentHeaderEXT4 *pExtentHeader, std::vector<__u64> &Bloques);
-	virtual int 			ParsearPunteros(const unsigned *Punteros, std::vector<__u64> &Bloques);
-	virtual int 			AgregarBloques(unsigned Bloque, unsigned TipoBloque, std::vector<__u64> &Bloques);
-	virtual const unsigned char	*PunteroACluster(__u64 NroCluster);
-	virtual const TINodeEXT		*PunteroAINode(unsigned NroINode);
-	virtual bool 			EsPotenciaDe(unsigned Numero, unsigned Base);
 };
 
 #endif
