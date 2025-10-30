@@ -1,0 +1,9 @@
+DIR	/
+DIR	/DIR
+#DIR	/DirGrande
+CAT	/DIR/map.xml
+#CAT	/DIR/sparse.txt
+#CAT	/dir/test-ads.txt
+#CAT	/dir/test-ads.txt:stream2
+#CAT	/dir/test-ads.txt:stream3
+#CAT	/DIR/sparse-file2.txt
